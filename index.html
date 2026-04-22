@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>79 · 79 Development — Brand Intelligence Index</title>
+<title>79 Development — Brand Intelligence Index</title>
+<link rel="icon" type="image/png" href="https://79dev.com/brand/79%20favicon%20circle%20dark.png">
 <meta name="description" content="79 Development Inc. is a brand intelligence and AI visibility agency that builds authority infrastructure — entity architecture, LLMs.txt, structured data, and citation systems — for growth-accountable founders and organizations across healthcare, private equity, M&A, SaaS, and beyond.">
 <link rel="canonical" href="https://79dev.com/">
 <meta name="robots" id="robotsMeta" content="index, follow">
@@ -139,9 +140,191 @@ body::before {
 
 /* ENTITY HEADER */
 .entity-header {
-  display: grid; grid-template-columns: 1fr 260px;
+  display: grid; grid-template-columns: 1fr 360px;
   gap: 40px; padding: 48px 0 40px;
-  border-bottom: 1px solid var(--ink05); margin-bottom: 0;
+  border-bottom: none; margin-bottom: 0;
+}
+
+.entity-meta-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  padding: 20px 28px;
+  background: var(--bg2);
+  border: 1px solid var(--ink05);
+  border-radius: 4px;
+  margin-bottom: 0;
+}
+
+.entity-meta-bar .meta-cell {
+  padding: 10px 16px;
+  border-right: 1px solid var(--ink05);
+}
+
+.entity-meta-bar .meta-cell:last-child {
+  border-right: none;
+}
+
+.entity-meta-bar .meta-cell:nth-child(5) {
+  border-right: none;
+}
+
+.entity-meta-bar .meta-cell-key {
+  font-family: var(--mono);
+  font-size: 7px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink20);
+  margin-bottom: 5px;
+}
+
+.entity-meta-bar .meta-cell-val {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.60);
+  line-height: 1.4;
+}
+
+.entity-meta-bar .meta-cell-val a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(238,191,77,0.2);
+}
+
+.site-preview {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.site-preview-frame {
+  background: #0a0a0a;
+  border: 1px solid rgba(46,204,113,0.30);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  box-shadow:
+    0 0 10px rgba(46,204,113,0.10),
+    0 0 28px rgba(46,204,113,0.05);
+  animation: preview-glow 3s ease-in-out infinite;
+}
+
+@keyframes preview-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(46,204,113,0.10),
+      0 0 28px rgba(46,204,113,0.05);
+    border-color: rgba(46,204,113,0.25);
+  }
+  50% {
+    box-shadow:
+      0 0 16px rgba(46,204,113,0.20),
+      0 0 44px rgba(46,204,113,0.08);
+    border-color: rgba(46,204,113,0.45);
+  }
+}
+
+.site-preview-frame:hover {
+  border-color: rgba(46,204,113,0.55);
+  box-shadow:
+    0 0 20px rgba(46,204,113,0.22),
+    0 0 52px rgba(46,204,113,0.10),
+    0 8px 32px rgba(0,0,0,0.4);
+  animation: none;
+}
+
+.site-preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--ink05);
+}
+
+.site-preview-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.site-preview-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+
+.site-preview-url {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  color: var(--ink20);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--ink05);
+  border-radius: 3px;
+  padding: 4px 10px;
+  text-align: center;
+}
+
+.site-preview-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+  transition: opacity 0.25s;
+}
+
+.site-preview-frame:hover .site-preview-img {
+  opacity: 1;
+}
+
+.site-preview-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green);
+  text-decoration: none;
+  padding: 10px 0;
+  border: 1px solid var(--green-l);
+  border-radius: 4px;
+  background: var(--green-d);
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.site-preview-cta:hover {
+  background: rgba(46,204,113,0.15);
+  border-color: rgba(46,204,113,0.45);
+  box-shadow: 0 0 12px rgba(46,204,113,0.12);
+}
+
+.site-preview-canonical {
+  text-align: center;
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--ink20);
+}
+
+.site-preview-canonical a {
+  color: var(--ink30);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink10);
+  transition: color 0.15s;
+}
+
+.site-preview-canonical a:hover {
+  color: var(--gold);
 }
 .entity-eyebrow {
   font-family: var(--mono); font-size: 8px; letter-spacing: 3px;
@@ -287,8 +470,8 @@ body::before {
 
 /* CONTENT ENTRY */
 .content-entry { background: var(--bg2); border: 1px solid var(--ink10); border-radius: 3px; margin-bottom: 2px; overflow: hidden; }
-.content-entry-head { display: grid; grid-template-columns: 80px 1fr auto; gap: 16px; align-items: center; padding: 16px 18px; }
-.content-entry-thumb { width: 80px; height: 48px; background: var(--bg3); border: 1px solid var(--ink10); border-radius: 2px; overflow: hidden; flex-shrink: 0; }
+.content-entry-head { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; padding: 16px 18px; }
+.content-entry-thumb { display: none; }
 .content-entry-thumb-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 7px; letter-spacing: 1px; color: var(--ink20); }
 .content-ep { font-family: var(--mono); font-size: 7px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; opacity: 0.7; }
 .content-title { font-family: var(--sans); font-size: 13px; font-weight: 500; color: var(--ink40); line-height: 1.4; }
@@ -452,6 +635,8 @@ body::before {
   .shell { padding: 0 16px 80px; }
   .entity-header { grid-template-columns: 1fr; }
   .entity-meta { display: none; }
+  .entity-meta-bar { grid-template-columns: repeat(2, 1fr); }
+  .entity-meta-bar .meta-cell { border-right: none; border-bottom: 1px solid var(--ink05); }
   .offer-grid { grid-template-columns: 1fr; }
   .signal-grid { grid-template-columns: 1fr 1fr; }
   .data-row { grid-template-columns: 1fr; gap: 4px; }
@@ -620,36 +805,39 @@ body::before {
         <span class="etag">80+ Rebrands</span>
       </div>
     </div>
-    <div class="entity-meta">
-      <div class="meta-header">// Entity Record</div>
-      <div class="meta-row">
-        <div class="meta-key">Entity Type</div>
-        <div class="meta-val">For-Profit Service Provider (Inc.)</div>
-      </div>
-      <div class="meta-row">
-        <div class="meta-key">Sector</div>
-        <div class="meta-val">Brand Intelligence &amp; AI Visibility</div>
-      </div>
-      <div class="meta-row">
-        <div class="meta-key">Founded</div>
-        <div class="meta-val">2012</div>
-      </div>
-      <div class="meta-row">
-        <div class="meta-key">Geography</div>
-        <div class="meta-val">Peterborough, ON &mdash; Canada &middot; North America</div>
-      </div>
-      <div class="meta-row">
-        <div class="meta-key">Principals</div>
-        <div class="meta-val">Caleb Pedosiuk &amp; Sarah Kerr</div>
-      </div>
-      <div class="meta-row">
-        <div class="meta-key">Canonical URL</div>
-        <div class="meta-val"><a href="https://79dev.com" target="_blank">79dev.com</a></div>
-      </div>
-      <div class="meta-row">
-        <div class="meta-key">Index Managed By</div>
-        <div class="meta-val">79 Development</div>
-      </div>
+    <div class="site-preview">
+      <a href="https://79dev.com" target="_blank" class="site-preview-frame">
+        <div class="site-preview-bar">
+          <div class="site-preview-dots"><span></span><span></span><span></span></div>
+          <div class="site-preview-url">79dev.com</div>
+        </div>
+        <img class="site-preview-img" src="https://api.microlink.io/?url=https://79dev.com&screenshot=true&meta=false&embed=screenshot.url" alt="79dev.com — Official Website" loading="lazy">
+      </a>
+      <a href="https://79dev.com" target="_blank" class="site-preview-cta">Visit Website Here &nbsp;&nbsp;&#10132;</a>
+      <div class="site-preview-canonical"><a href="https://79dev.com" target="_blank">79dev.com</a></div>
+    </div>
+  </div>
+
+  <div class="entity-meta-bar">
+    <div class="meta-cell">
+      <div class="meta-cell-key">Entity Type</div>
+      <div class="meta-cell-val">For-Profit Service Provider (Inc.)</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-cell-key">Sector</div>
+      <div class="meta-cell-val">Brand Intelligence<br>AI Visibility</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-cell-key">Founded</div>
+      <div class="meta-cell-val">2012</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-cell-key">Geography</div>
+      <div class="meta-cell-val">Peterborough,<br>Ontario, Canada</div>
+    </div>
+    <div class="meta-cell">
+      <div class="meta-cell-key">Principals</div>
+      <div class="meta-cell-val">Caleb Pedosiuk<br>Sarah Kerr</div>
     </div>
   </div>
 
@@ -839,53 +1027,238 @@ body::before {
         </div>
 
         <div class="proof-item">
-          <div class="proof-quote">"A true strategic extension of your team."</div>
-          <div class="proof-attr">John Follett &middot; Google &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="proof-quote">"Working with Caleb and Sarah at 79 Development has been an outstanding experience. They are not just a service provider, they are a true strategic extension of your team. From day one, they took the time to deeply understand our business model, growth objectives, and positioning, and then helped us think several moves ahead. What sets 79 Dev apart is how forward-thinking they are. They are operating at the edge of where AI, brand authority, and search are heading, not where they've been. Instead of chasing tactics, they help you build durable positioning and systems that prepare your organization for what's next. Caleb brings sharp strategic clarity, and Sarah combines operational excellence with a strong client-first mindset. Together, they balance vision with execution in a way that builds real confidence. If you are looking for a thoughtful, future-focused partner who can help you navigate AI-driven brand transformation and elevate your authority in the market, I highly recommend 79 Development."</div>
+          <div class="proof-attr">John Follett &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
 
         <div class="proof-item">
-          <div class="proof-quote">"We did not have AI authority... now we do."</div>
-          <div class="proof-attr">Britnie Turner &middot; Google &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="proof-quote">"Before 79 Development, we had a world-class experience but we did not have AI authority aligned with it. The Aerial, BVI is my private island resort operating in one of the most competitive luxury markets in the world. And we are not just selling hotel rooms, we are selling life transformation. And I found, if AI doesn't understand you properly, you don't exist in the conversations that matter. 79 Development completely shifted that. They didn't just 'improve visibility.' They rebuilt how our brand is interpreted by AI systems, from infrastructure to narrative to authority signals. The impact on our business has been nothing short of PROFOUND. We moved from inconsistent performance to sustained profitability. From hoping we'd be discovered to strategically owning our positioning. They operate at a different level than traditional marketing firms. This is not surface SEO. This is long-term strategic advantage from people who ACTUALLY CARE! If you're building a premium brand and want to become the default answer in your category, hire them."</div>
+          <div class="proof-attr">Britnie Turner &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
 
         <div class="proof-item">
-          <div class="proof-quote">"The discovery phase alone is worth it."</div>
-          <div class="proof-attr">Jamie Manuel &middot; Google &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="proof-quote">"I have leveraged 79 Dev several times now and there are a few reasons I keep coming back. Aside from the solid content they create, what is most useful to me is the discovery phase that Caleb and Sarah undertake with their clients when starting out on a project. I have learned on more than one occasion, that what I thought I needed, would not have actually hit the mark and instead would have cost me time and money. Yet, in each of those cases, I ended up with successful projects that hit all the key metrics and goals that were well defined during the planning. Caleb looks at things holistically, and yet drives down to the pragmatic details at the same time. It's because of that hyper-focused tenacity that 79 Dev has produced revenue-generating content/campaigns but they have also saved me time and money during the creation process."</div>
+          <div class="proof-attr">Jamie Manuel &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
 
         <div class="proof-item">
-          <div class="proof-quote">"Incredibly reliable."</div>
-          <div class="proof-attr">Jake Smith &middot; Google &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="proof-quote">"Working with Sarah and Caleb at 79 Development has been an absolute pleasure. Their level of dedication, knowledge, and genuine care for what they do truly stands out. They consistently go above and beyond to explore new ideas, tools, and technologies that make things more efficient, streamlined, and effective. What I appreciate most is not only their expertise but also their patience and the way they take the time to explain and guide you through the process. They are incredibly reliable and deliver a very high standard of work. It has been a great experience working with them, and we are truly grateful for the service they have provided."</div>
+          <div class="proof-attr">Jake Smith &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
 
         <div class="proof-item">
-          <div class="proof-quote">"Professionalism, integrity, genuine care."</div>
-          <div class="proof-attr">Julio Rios &middot; Google &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="proof-quote">"I had the opportunity to work alongside 79 Development during the Communion event in Washington, DC, and later in Jamaica during disaster relief efforts following Hurricane Melissa. Throughout both experiences, Caleb represented the organization with professionalism, integrity, and genuine care for the people being served. Caleb is a good man with extraordinary skill in media relations and marketing. More importantly, he has a rare ability to recognize and capture meaningful human moments. Working with 79 Development was a positive and impactful experience, and their commitment to authentic storytelling and human connection truly stood out."</div>
+          <div class="proof-attr">Julio Rios &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
 
         <div class="proof-item">
-          <div class="proof-quote">"They put their whole heart and soul into everything they do."</div>
-          <div class="proof-attr">Carl Nabein &middot; Google &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="proof-quote">"Caleb and Sarah have been absolutely amazing to deal with. They put their whole heart and soul into everything they do and do it to perfection standards. Can't say enough about this great team. Great visionaries, creative, trustworthy, honest and exceptional effort with proven results. Highly recommend, you won't be disappointed!"</div>
+          <div class="proof-attr">Carl Nabein &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
 
         <div class="proof-item">
-          <div class="proof-quote">"From start to finish, the experience was fantastic."</div>
-          <div class="proof-attr">Brock Stringer &middot; Google &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="proof-quote">"79 Development completely rebranded our company after a few decades of brand neglect. From start to finish, the experience was fantastic. It's nice to be working with people you trust and have your best interest in mind. Thanks Guys!"</div>
+          <div class="proof-attr">Brock Stringer &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
 
         <div class="proof-item">
-          <div class="proof-quote">"Exceptional design and real results."</div>
-          <div class="proof-attr">Jenna Griffith &middot; Google &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="proof-quote">"Working with 79dev was an incredible experience. They made the entire process simple and stress-free and were genuinely easy to work with. My website turned out absolutely beautiful! It's clean, professional, and perfectly aligned with my brand. What truly sets them apart is their ability to integrate SEO seamlessly into the design, helping increase visibility and views. I highly recommend them to anyone looking for both exceptional design and real results."</div>
+          <div class="proof-attr">Jenna Griffith &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
 
         <div class="proof-item">
-          <div class="proof-quote">"The people you want to trust your business with."</div>
-          <div class="proof-attr">Shane Keil &middot; Google &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="proof-quote">"The owners of 79 Dev are some of the most honest, trustworthy and caring people I have ever met in my life. No matter what endeavour they are working on with me they bring their whole heart to it and really just show a level of care around having my best interest and best possible outcome front of mind. I appreciate everything that they have done for me to keep helping level up my success. They truly are the salt of the Earth."</div>
+          <div class="proof-attr">Shane Keil &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
 
         <div class="proof-item">
-          <div class="proof-quote">"Work ethic second to none."</div>
-          <div class="proof-attr">Ross Alewine &middot; Google &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="proof-quote">"I had the opportunity to work with 79 Development in the field. There creativity combined with there work ethic was second to none. Amazing company to partner with."</div>
+          <div class="proof-attr">Ross Alewine &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"79 Development were amazing to deal with: our business was experiencing many issues with our Google Landing Page. They're experience and expertise not only resolved all our issues but also aided us in listing much higher with our Google ranking. Great people, great business."</div>
+          <div class="proof-attr">Joseph Corkery &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"I have worked with Caleb &amp; Sarah for the better part of 4 years. They have been such a pleasure to collaborate with. They are so creative and receptive to feedback it makes the process fun."</div>
+          <div class="proof-attr">Marco Bava &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"I have been working with this company for a few years now, and they have been instrumental in the growth of my nonprofit specifically on how we can connect to our donors supporters and potential future donors and supporters better. What I like about this team is they are kind, listen and always put in the extra work to give a quality product. They also keep track of new tech and trends and keep us cutting edge. Can't recommend them enough."</div>
+          <div class="proof-attr">Jeremy Locke &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"I've had very few people in my life, who communicate as powerfully and eloquently as Caleb and Sarah. Wonderful, kind, caring souls who provide remarkable services to all whom they encounter!"</div>
+          <div class="proof-attr">Real Life Trading &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"We've had the privilege of working closely with 79 Development and have seen firsthand how deeply they care about the mission. They've helped us strengthen our brand and bring clarity to our message, while also supporting us in real-time through complex missions and disaster response efforts. They're not just strategic advisors, they show up, step in, and truly partner in the work."</div>
+          <div class="proof-attr">Seth Griffith &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"We've had an outstanding experience working with 79 Development. I would highly recommend them to any organization looking to strengthen their digital presence."</div>
+          <div class="proof-attr">Beck L. &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"I've worked with 79 Development in my capacity as COO at Gradient Geothermal. They provide great support and are very knowledgeable at website development. I would absolutely recommend 79 Development to anyone looking for a reliable and capable development partner."</div>
+          <div class="proof-attr">Johanna Ostrum &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Their team is professional, responsive, and creative. They truly understand the goals of their clients! Highly recommend!"</div>
+          <div class="proof-attr">Whitney Lu &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"The team at 79 Development delivers both strategy and execution at an impressive level. Their ability to translate ideas into a cohesive, compelling brand presence has had a measurable impact. Beyond their talent, what truly sets them apart is their responsiveness, adaptability, and commitment to exceeding expectations. They consistently go above and beyond, providing insights and support that extended far past the original scope of projects with their innovative approach and personal touch."</div>
+          <div class="proof-attr">Elena Snelten &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"I've known Caleb for at least a decade. He's a man of 100% integrity, pays utmost attention to details and definitely fits the term of being a solutionary."</div>
+          <div class="proof-attr">Carol Devey &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"79 Development has been exceptional in supporting not one but two of my businesses. They help us with understanding website strategy, brand alignment, content creation and most of all what is needed in today's online space to stay relevant and current. With the landscaping always changing, Caleb and Sarah along with their amazing team is always leading the way. They are truly an agency that deeply listens to clients and offers solutions that are highly relevant in today's marketplace that support you in reaching your business goals and outcomes. They have become such a trust advisor for me, that they have become my #1 agency when building online."</div>
+          <div class="proof-attr">Shannon Fisher &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"I have had the opportunity to work with the team at 79 Development on a number of projects - all of which have been outstanding. Caleb and the entire team takes the time to deeply understand the business objective first. From there, the ability to create compelling messaging and visuals that draw the reader in and move them on a journey to action is best in class. Having worked with many branding companies and professionals in my former capacity as CMO at a major global investment bank, I give 79 Development an A+ and would strongly recommend them for any business that wants to maximize the money spent on marketing their company."</div>
+          <div class="proof-attr">Catherine Flax &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Caleb and co are excellent marketing partners. They were successfully able to help our brands be the best choice in AI search. Cant recommend them enough!"</div>
+          <div class="proof-attr">Jared Chadwick &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"I've had such an amazing experience working with 79 Development. Caleb and Sarah are two of the most invested, caring, creative, and talented people I've had the opportunity to know. Their work has simplified and amplified my business. Thank you, 79 Dev!"</div>
+          <div class="proof-attr">Alex MacDonald &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Caleb has always been a creative mind and a passionate professional. He has a rare standard he sets for himself in both his work and his life. There is not another CEO out there more trustworthy than him."</div>
+          <div class="proof-attr">Paul Koo &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Ive had the pleasure to work on set with Sarah for the Pillers of Light branding. I was hired to do for the hair for the shoot and was able to stay for the whole day of shooting. I first handly witnessed how Sarah was able to help bring the brand and story behind the brand to life by asking questions that really brought out the owners vision and passion behind the project. Sarah really knew the right questions to ask. This is only 1 of the many skills that Sarah and the whole team bring to the table. You won't be disappointed hiring them."</div>
+          <div class="proof-attr">Kristen Kerr &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Can't recommend them enough! Exceptional service, high integrity and the people you want to trust your business with!"</div>
+          <div class="proof-attr">Justin Campbell &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"I've had the opportunity to work closely with Caleb, Sarah, and their team, and what stands out most is not just their competence, but their character. In a space where it can be hard to know who to trust, Caleb, Sarah, and their team operate with a high level of integrity. They genuinely care about the mission behind the work, not just the deliverables. Their approach is thoughtful, strategic, and execution-focused, helping bring clarity where things can feel overwhelming or scattered. They don't just tell you what you want to hear. They help you think clearly, ask the right questions, and move toward a plan you can actually execute. That kind of partnership is rare. If you're looking for a team that is trustworthy, capable, and genuinely invested in helping you succeed, I would absolutely recommend them."</div>
+          <div class="proof-attr">Jordan Taylor &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Caleb and Sarah are incredible! Highly recommend!"</div>
+          <div class="proof-attr">Micha Kubassek &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"If the stars could rate higher I would for this group. I'm not one who likes to review much, but only in the rarest of situations we receive really bad or really good service. 79 is the type of organization that takes your hard to articulate ideas and goals, and lays them out succinctly and in a well crafted strategy. Hard to get quality and value from many 'industry standard' companies these days it seems, but with 79, you get quality with the personal touch, a pleasure to communicate with! Don't tell them this but I would have paid more for their work!"</div>
+          <div class="proof-attr">David Joseph &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Over the past 7 years, 79 Development helped our organization, Alternatives Funeral &amp; Cremation Services, build out and support the growth of our online marketing campaigns, across Google and social media. Rather than outsourcing to a typical agency, 79 Dev helped our team build our capacity in-house to confidently and effectively run our campaigns. 79 Dev always came with fresh ideas, a strategic mind, and the experience we needed to grow our business."</div>
+          <div class="proof-attr">Tyrel Burton &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"79 Development helped us establish real brand authority in our space, from creative direction and messaging through to a technically sound, AI- and search-ready website foundation, including SEO and answer-engine considerations. Their ability to think strategically while executing at a high level gave us confidence in how we show up to enterprise and Fortune 500 clients. They go beyond surface-level marketing work, helping with foundational strategies for growth."</div>
+          <div class="proof-attr">Jesse Hopps &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Caleb and Sarah are truly exceptional individuals who pour their passion and dedication into every aspect of their work. Their commitment to our nonprofit's mission and impact, along with generous support for our team, was evident in everything they spearheaded and strategized. Working with them has been an absolute pleasure. They possess an unmatched vision, creativity, and integrity, delivering outstanding results with unwavering support."</div>
+          <div class="proof-attr">Cayla Metzger &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Working alongside 79 for many years, I can attest to their true, authentic passion for the work they do and the companies they choose to align with. They care immensely and are not your 'typical' marketing team. It's almost hard to describe why or how they differ until you've met them, but they are some of the most patient, uniquely creative and truly impactful people I've ever had the pleasure to work with. If you find yourself with the opportunity to work with 79, there's nothing to second guess. Once you've spoken with them, you'll understand my 5-star review! I'd give them 10 if it were an option."</div>
+          <div class="proof-attr">Carly Reid &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"My custom home building business started working with 79 Development in 2019, they improved our brand 100x over with an amazing new website, logo, and search engine optimization. we immediately saw results in lead generation. Their attention to all of the fine details and ability to listen to what we were struggling with and take action is amazing. Can't recommend them enough!"</div>
+          <div class="proof-attr">Stu Shedden &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Sarah, Caleb and the 79 Dev team have been instrumental in our online presence. They listen to our goals and executed exactly what we needed for our business website and online platforms. They have been there for us when we required a quick ad or image sent our way. No questions asked. We are so excited to be working with them again for a new website experience for our customers."</div>
+          <div class="proof-attr">Jessica Payne &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"79 Dev is brilliant! Their creative and accessible team have provided innovative solutions for us! Beyond that, Caleb and Sarah are intentional, grounded and caring people. I'd recommend working with them!"</div>
+          <div class="proof-attr">Adam Shepski &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Caleb and Sarah are awesome people to work with. They are both gifted, creative, trustworthy, and super responsible. They genuinely care about the business, project, and all people that are involved. They are visionaries that are able to translate any idea into brand elements and carry it through in all expressions. They also have a keen eye on market insights and customer behaviours. Highly recommended!"</div>
+          <div class="proof-attr">Eve W. &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"From the brand messaging work to the lead gen. campaigns, it's been an absolute pleasure having their support and resources. They truly understand the value of building thoughtful + effective partnerships and we look forward to future work with the team!"</div>
+          <div class="proof-attr">Mark Boucher &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"The entire 79 Development team are experts that are willing to go above and beyond to see the success of your project, and company as a greater whole. One of the qualities I admire most about the team, and especially the owners, is their ability to use data-informed decisions to execute and pivot strategies. The team is quick to respond, execute, and implement ALWAYS which is hard to find in a typical agency setting. They always take the approach of letting clients guide the vision and they adapt the strategy to fit your goals. I have loved working with this team and they will continue to be my first contact for all new projects in the future!"</div>
+          <div class="proof-attr">Tori Rolson &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"They create such an incredible space to think out loud and get into a flow state while discussing your vision. Whether talking about online presence, or the impact we want to have, they find a way to turn those conversations into clear pathways and provide amazing support for each step taken along the way. The team wants to see you succeed in a way that makes it clear it's not 'just' a job to them - no vision is too big to make a reality, but they'll sure as heck let you know if you're thinking too small! They're an insanely knowledgeable team who can create a strategy from the most expansive/messy thoughts and support you on the path from idea to implementation."</div>
+          <div class="proof-attr">Jessica Cox &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Helping an individual really find what they want there site to look like and loving it. The team work done behind the scenes by 79 development is phenomenal as they show up to meet ups prepared with everything that has been given to them. I would recommend them over and over to create or re-create your website."</div>
+          <div class="proof-attr">Kelsey W. &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Such an incredible company of people!! They execute quickly and are very organized from start to finish!"</div>
+          <div class="proof-attr">Kara Lucas &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Absolute gems to work with. I've never had a bad experience with 79. Can't recommend them enough."</div>
+          <div class="proof-attr">Chris Payne &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"We've worked with 79 Development on multiple projects, and they have always been professional, and created great products. Would recommend!"</div>
+          <div class="proof-attr">Homer Cinema LLC &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"79 Development played an integral role in shaping the identity of the Peterborough Regional Farmers Market. The Local Dirt Local Worth branding they developed to support the launch of the market was a powerful force in differentiating and enhancing the market's unique story and appeal."</div>
+          <div class="proof-attr">Field Sparrow &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-quote">"Great company to work with, professional and creative."</div>
+          <div class="proof-attr">Julio Campos &middot; <a href="https://maps.app.goo.gl/iEjVTTJmw6pu5Jri7" target="_blank" style="color:var(--ink20);text-decoration:none;border-bottom:1px solid var(--ink10);transition:color 0.15s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--ink20)'">Google Business Review</a> &middot; 79 Development &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
         </div>
 
         <!-- Case Studies -->
@@ -1065,6 +1438,146 @@ body::before {
             <p class="content-synopsis">Dedicated resource covering the specific AI visibility and brand authority challenges facing healthcare and longevity organizations. Addresses the unique dynamics of AI-driven discovery in regulated healthcare markets — where being invisible to AI carries patient trust and referral consequences beyond typical commercial stakes.</p>
             <div class="content-actions">
               <a href="https://79dev.com/healthcare/" class="content-btn watch" target="_blank">Healthcare AI Search &#8594;</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin: 28px 0 12px; font-family: var(--mono); font-size: 7px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ink20);">// Conversations &amp; Media</div>
+
+        <div class="content-entry">
+          <div class="content-entry-head">
+            <div class="content-entry-thumb"><div class="content-entry-thumb-placeholder">TALK</div></div>
+            <div>
+              <div class="content-ep">Founder Talk &middot; 001 &middot; Apr 2026</div>
+              <div class="content-title">AI Visibility and What It Takes to Scale (with Steve Ward)</div>
+            </div>
+            <button class="content-expand-btn" onclick="toggleContent(this)">expand &#9660;</button>
+          </div>
+          <div class="content-entry-body">
+            <p class="content-synopsis">A conversation with Steve Ward of Haven by Design Stays on brand authority, building outside the ecosystem, and what it means to scale something real in the age of agentic search.</p>
+            <div class="content-actions">
+              <a href="https://www.youtube.com/watch?v=xDostKRjpiU" class="content-btn watch" target="_blank">Watch on YouTube &#8594;</a>
+              <a href="https://open.spotify.com/episode/6JSpCD1l0KqyNXPTt5g1ti" class="content-btn watch" target="_blank">Listen on Spotify &#8594;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-entry">
+          <div class="content-entry-head">
+            <div class="content-entry-thumb"><div class="content-entry-thumb-placeholder">EP</div></div>
+            <div>
+              <div class="content-ep">Episode &middot; 007 &middot; Apr 2026</div>
+              <div class="content-title">Brand Authority in the Age of AI</div>
+            </div>
+            <button class="content-expand-btn" onclick="toggleContent(this)">expand &#9660;</button>
+          </div>
+          <div class="content-entry-body">
+            <p class="content-synopsis">Three ideas worth sitting with as the shift to AI-driven search accelerates: the blue ocean window in AI visibility, machine-first thinking, and stepping outside of time.</p>
+            <div class="content-actions">
+              <a href="https://www.youtube.com/watch?v=JYZJqPS1pH4" class="content-btn watch" target="_blank">Watch on YouTube &#8594;</a>
+              <a href="https://open.spotify.com/episode/6vK9JftxvERrtE8mHgAlrd" class="content-btn watch" target="_blank">Listen on Spotify &#8594;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-entry">
+          <div class="content-entry-head">
+            <div class="content-entry-thumb"><div class="content-entry-thumb-placeholder">EP</div></div>
+            <div>
+              <div class="content-ep">Episode &middot; 006 &middot; Mar 2025</div>
+              <div class="content-title">Systems &amp; Tariffs</div>
+            </div>
+            <button class="content-expand-btn" onclick="toggleContent(this)">expand &#9660;</button>
+          </div>
+          <div class="content-entry-body">
+            <p class="content-synopsis">How systems thinking applies to macroeconomic forces like tariffs and to the internal structures founders build when growing a company.</p>
+            <div class="content-actions">
+              <a href="https://www.youtube.com/watch?v=Gs48lsiPBnI" class="content-btn watch" target="_blank">Watch on YouTube &#8594;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-entry">
+          <div class="content-entry-head">
+            <div class="content-entry-thumb"><div class="content-entry-thumb-placeholder">EP</div></div>
+            <div>
+              <div class="content-ep">Episode &middot; 005 &middot; Mar 2025</div>
+              <div class="content-title">The Engine That Drives You</div>
+            </div>
+            <button class="content-expand-btn" onclick="toggleContent(this)">expand &#9660;</button>
+          </div>
+          <div class="content-entry-body">
+            <p class="content-synopsis">Exploring the internal engine that sustains founders through the long game of building something that matters.</p>
+            <div class="content-actions">
+              <a href="https://www.youtube.com/watch?v=4iLQYLvpEeE" class="content-btn watch" target="_blank">Watch on YouTube &#8594;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-entry">
+          <div class="content-entry-head">
+            <div class="content-entry-thumb"><div class="content-entry-thumb-placeholder">EP</div></div>
+            <div>
+              <div class="content-ep">Episode &middot; 004 &middot; Feb 2025</div>
+              <div class="content-title">Energy Is a Catalyst</div>
+            </div>
+            <button class="content-expand-btn" onclick="toggleContent(this)">expand &#9660;</button>
+          </div>
+          <div class="content-entry-body">
+            <p class="content-synopsis">How energy functions as a catalyst in leadership, decision-making, and the work of building authority.</p>
+            <div class="content-actions">
+              <a href="https://www.youtube.com/watch?v=KAQgC2KdZh4" class="content-btn watch" target="_blank">Watch on YouTube &#8594;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-entry">
+          <div class="content-entry-head">
+            <div class="content-entry-thumb"><div class="content-entry-thumb-placeholder">EP</div></div>
+            <div>
+              <div class="content-ep">Episode &middot; 003 &middot; Feb 2025</div>
+              <div class="content-title">Healing &amp; the Fabric of Reality</div>
+            </div>
+            <button class="content-expand-btn" onclick="toggleContent(this)">expand &#9660;</button>
+          </div>
+          <div class="content-entry-body">
+            <p class="content-synopsis">A conversation exploring the intersection of healing, perception, and the deeper fabric that connects what we build to why it matters.</p>
+            <div class="content-actions">
+              <a href="https://www.youtube.com/watch?v=MD3tszrB7do" class="content-btn watch" target="_blank">Watch on YouTube &#8594;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-entry">
+          <div class="content-entry-head">
+            <div class="content-entry-thumb"><div class="content-entry-thumb-placeholder">EP</div></div>
+            <div>
+              <div class="content-ep">Episode &middot; 002 &middot; Feb 2025</div>
+              <div class="content-title">Pressure + Perspective</div>
+            </div>
+            <button class="content-expand-btn" onclick="toggleContent(this)">expand &#9660;</button>
+          </div>
+          <div class="content-entry-body">
+            <p class="content-synopsis">On how pressure shapes perspective, and why the brands and founders that endure are the ones who let pressure sharpen them rather than flatten them.</p>
+            <div class="content-actions">
+              <a href="https://www.youtube.com/watch?v=ifMoqsSCn8c" class="content-btn watch" target="_blank">Watch on YouTube &#8594;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-entry">
+          <div class="content-entry-head">
+            <div class="content-entry-thumb"><div class="content-entry-thumb-placeholder">EP</div></div>
+            <div>
+              <div class="content-ep">Episode &middot; 001 &middot; Feb 2025</div>
+              <div class="content-title">The Niche Paradox</div>
+            </div>
+            <button class="content-expand-btn" onclick="toggleContent(this)">expand &#9660;</button>
+          </div>
+          <div class="content-entry-body">
+            <p class="content-synopsis">The paradox of niching down — why the instinct to serve everyone is the thing that makes a brand invisible, and what happens when you commit to being known for one thing.</p>
+            <div class="content-actions">
+              <a href="https://www.youtube.com/watch?v=BRLMSxhz6U8" class="content-btn watch" target="_blank">Watch on YouTube &#8594;</a>
             </div>
           </div>
         </div>
